@@ -1,3 +1,6 @@
+const { connect } = require("./client");
+// const readline = require('readline');
+
 let connection;
 
 const handleUserInput = function(data) {
@@ -16,7 +19,27 @@ const handleUserInput = function(data) {
   if (data === 'd') {
     connection.write("Move: right");
   }
-}
+  if (data === '1') {
+    connection.write("Say: gotcha");
+  }
+  if (data === '2') {
+    connection.write("Say: I win");
+  }
+  if (data === '3') {
+    connection.write("Say: see ya");
+  }
+/*if (data === '\`') {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+    rl.question('type message: ', (answer) => {
+      connection.write(`Say: ${answer}`);
+      rl.close();
+      setupInput(connection);
+    });
+  } */
+};
 
 const setupInput = function(conn) {
   connection = conn;
