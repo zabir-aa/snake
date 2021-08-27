@@ -1,9 +1,25 @@
+let connection;
+
 const handleUserInput = function(data) {
   if (data === '\u0003') {
     process.exit();
   }
-};
-const setupInput = function() {
+  if (data === 'w') {
+    connection.write('Move: up');
+  }
+  if (data === 'a') {
+    connection.write("Move: left");
+  }
+  if (data === 's') {
+    connection.write("Move: down");
+  }
+  if (data === 'd') {
+    connection.write("Move: right");
+  }
+}
+
+const setupInput = function(conn) {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
@@ -13,6 +29,5 @@ const setupInput = function() {
 };
 
 module.exports = {
-  handleUserInput,
   setupInput
-}
+};
