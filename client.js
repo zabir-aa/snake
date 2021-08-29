@@ -8,10 +8,10 @@ const connect = function() {
   });
   conn.setEncoding("utf8");   // interpret incoming data as text
   conn.on('connect', () => {
-    console.log("Successfully connected to the server");
+    console.log("Successfully connected to the server"); // Confirmation prompt after a new connection
     conn.write('Name: AAZ');
   });
-  conn.on("data", (data) => {
+  conn.on("data", (data) => { // To display any data received from the server
     console.log(data);
   });
   return conn;

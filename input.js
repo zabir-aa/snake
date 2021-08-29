@@ -1,8 +1,6 @@
-// const readline = require('readline'); // For an experimental chatting feature (function below)
+let connection; // A global scope variable to be used in multiple functions
 
-let connection;
-
-const handleUserInput = function(data) {
+const handleUserInput = function(data) { // User input mapping function
   if (data === '\u0003') {
     process.exit();
   }
@@ -27,21 +25,9 @@ const handleUserInput = function(data) {
   if (data === '3') {
     connection.write("Say: see ya");
   }
-// A chatting option while playing/ has a minor bug - but functional
-/*if (data === '\`') {
-    const rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout
-    });
-    rl.question('type message: ', (answer) => {
-      connection.write(`Say: ${answer}`);
-      rl.close();
-      setupInput(connection);
-    });
-  } */
 };
 
-const setupInput = function(conn) {
+const setupInput = function(conn) { // User input framework
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
