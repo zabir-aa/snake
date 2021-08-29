@@ -1,5 +1,4 @@
-const { connect } = require("./client");
-// const readline = require('readline');
+// const readline = require('readline'); // For an experimental chatting feature (function below)
 
 let connection;
 
@@ -28,6 +27,7 @@ const handleUserInput = function(data) {
   if (data === '3') {
     connection.write("Say: see ya");
   }
+// A chatting option while playing/ has a minor bug - but functional
 /*if (data === '\`') {
     const rl = readline.createInterface({
       input: process.stdin,
