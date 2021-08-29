@@ -1,5 +1,5 @@
 // For an experimental chatting feature - makes live chat possibe during gameplay
-// TThis feature contains a loop bug:
+// This feature contains a loop bug:
 // After each message is sent, the connection and messages get one extra instance due to the extra call of the whole setupInput function.
 // Need to find an alternative to that in order to get back to gameplay from chat.
 // Steps:

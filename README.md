@@ -20,7 +20,11 @@ Before you can run this client, you will need to be running the server side whic
 - Press tiled "`" key to chat if the extra chat feature is enabled.
 
 ## Extra Features
-An optional chat feature is available, although not part of the primary package. The required code and instructions can be found in the extra.js file. 
+An optional chat feature is available, although not part of the primary package. The required code and instructions can be found in the extra.js file.
+
+## Known Bug:
+The extra feature contains a loop bug:
+After each message is sent, the connection and messages get one extra instance. This is due to the extra call of the whole setupInput function in order to get back to gameplay from chat. Need to find an alternative to this.
 
 ## Mod by:
 Abdullah Ahmad Zabir
